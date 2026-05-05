@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+# Core Data Science
+numpy
+pandas
+scipy
+
+# Technical Analysis & ML
+pandas-ta
+scikit-learn
+seaborn
+
+# Trading & Config
+metatrader5
+=======
+# Core Data Science
+numpy
+pandas
+scipy
+
+# Technical Analysis & ML
+pandas-ta
+scikit-learn
+seaborn
+
+# Trading & Config
+metatrader5
+>>>>>>> da5aa461dbb0f1589a9d5c3ad9fb3a175f2f7bf6
+PyYAML
