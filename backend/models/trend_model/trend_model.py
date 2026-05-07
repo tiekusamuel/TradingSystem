@@ -8,16 +8,15 @@ import os
 from typing import Tuple, Optional, Dict, List, Union
 from datetime import datetime
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+from tensorflow import keras
 
-import tensorflow as tf
-import keras
 from keras import layers, models, optimizers, callbacks, regularizers
 from sklearn.preprocessing import StandardScaler
 from sklearn.utils.class_weight import compute_class_weight
 from sklearn.model_selection import TimeSeriesSplit
 import joblib
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 class LSTMPredictor:
     """
@@ -34,10 +33,10 @@ class LSTMPredictor:
     
     def __init__(
         self,
-        lookback: int = 100,
+        lookback: int = 200,
         features: int = 20,
-        lstm_units: List[int] = [128, 64, 32],
-        dropout: float = 0.6,
+        lstm_units: List[int] = [64, 32],
+        dropout: float = 0.4,
         dense_units: int = 16,
         learning_rate: float = 0.0001,
         weight_decay: float = 0.0001,
@@ -81,11 +80,11 @@ class LSTMPredictor:
         self.feature_names = None
         self.n_features = None
         
-        # Directory structure
-        self.model_dir = model_dir
-        self.checkpoint_dir = os.path.join(model_dir, 'checkpoints')
-        self.log_dir = os.path.join(model_dir, 'logs')
-        self.trained_dir = os.path.join(model_dir, 'trained')
+        
+        
+        self.checkpoint_dir = "models/trend_model"
+        self.log_dir = "models/trend_model"
+        self.trained_dir = "models/trend_model"
         
         # Create directories
         for directory in [self.checkpoint_dir, self.log_dir, self.trained_dir]:
@@ -94,8 +93,8 @@ class LSTMPredictor:
         # Logging
         self.logger = logging.getLogger(__name__)
         
-        tf_version = tf.__version__
-        self.logger.info(f"LSTM Predictor initialized (TensorFlow {tf_version})")
+        #tf_version = tf.__version__
+        #self.logger.info(f"LSTM Predictor initialized (TensorFlow {tf_version})")
         self.logger.info(f"Architecture: {lstm_units} LSTM units, {dropout} dropout")
         
     

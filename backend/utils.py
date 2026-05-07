@@ -7,6 +7,8 @@ import os
 from typing import Tuple, Optional, Dict, List, Union
 from datetime import datetime
 
+import matplotlib.pyplot as plt
+
 from models.trend_model.trend_model import LSTMPredictor
 
 
@@ -17,8 +19,9 @@ def plot_training_history(history: keras.callbacks.History, save_path: Optional[
     Args:
         history: Keras training history
         save_path: Path to save plot (optional)
+    
+    
     """
-    import matplotlib.pyplot as plt
     
     fig, axes = plt.subplots(1, 2, figsize=(15, 5))
     
@@ -53,7 +56,10 @@ def plot_training_history(history: keras.callbacks.History, save_path: Optional[
         plt.show()
     
     plt.close()
-
+    
+    
+    
+    
 
 def evaluate_model(
     model: LSTMPredictor,

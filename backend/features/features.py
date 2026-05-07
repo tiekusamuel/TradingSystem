@@ -398,7 +398,7 @@ class TechnicalFeatures:
             
             'EMA_Cross_9_21', 'EMA_Cross_50_200',
             
-            'ADX', 'ADX_14', 'DI_plus', 'DI_minus',
+            'ADX', 'ADX_14', 'DI_plus', 'DI_minus'
             
            
             

@@ -46,12 +46,14 @@ class MultiPairTradingSystem:
         self.technical_indicators = TechnicalFeatures()
         self.trend_model = LSTMPredictor()  
         
+        self.path= f'historicalData/EURUSD_15M_2007_2024.csv'
        
-       
+        
+        
         
     def initialize(self):
        
-        self.path =f'EURUSDm_M15_2000_2024.csv'
+       
         self._train_model_for_pair(self.path)
         
         
@@ -63,34 +65,37 @@ class MultiPairTradingSystem:
         try:
            
             
-        # Load data from CSV
+            # Load data from CSV
             if not os.path.exists(csv_file_path):
              raise FileNotFoundError(f"CSV file not found: {csv_file_path}")
         
-            df = pd.read_csv(csv_file_path, sep='\t')
+            df = pd.read_csv(csv_file_path, sep=',')
             if df.empty:
                 raise ValueError(f"No historical data retrieved for {self.symbol}")
             
             
 
             # 2. Combine Date and Time into one column
-            df['time_combined'] = pd.to_datetime(df['date'] + ' ' + df['time'])
+            #df['time_combined'] = pd.to_datetime(df['date'] + ' ' + df['time'])
 
             # 3. Set as index and drop the old separate columns
-            df.set_index('time_combined', inplace=True)
+            #df.set_index('time_combined', inplace=True)
             
             
             
-            df.drop(['date', 'time'], axis=1, inplace=True)
+            #df.drop(['date', 'time'], axis=1, inplace=True)
 
             # 4. Now perform your renames
             df.rename(columns={
+                
                 'open': 'Open',
                 'high': 'High',
                 'low': 'Low',
                 'close': 'Close',
-                'tick_volume': 'Volume'
             }, inplace=True)
+            
+            df['datetime'] = pd.to_datetime(df['datetime'])
+            df.set_index('datetime', inplace=True)
             
             df=self.trend_model.add_circular_time_features(df)
             
@@ -134,11 +139,11 @@ class MultiPairTradingSystem:
                 self.logger.info(f"  🔄 Epochs Completed:  {total_epochs}/50")
             
             # Save model
-            model_path = f'backend/trend_model/EURUSDm_M15_lstm.keras'
-            scaler_path = f'backend/trend_model/EURUSDm_M15_scaler.pkl'
+            model_path = None
+            scaler_path = None
             self.trend_model.save(model_path, scaler_path)
             
-            path= f'trend_model/EURUSDm_M15.png'
+            path= f'models/trend_model/charts/EURUSD_M15_2007_2024.png'
             
             utils.plot_training_history(history, save_path=path)
             
@@ -178,7 +183,7 @@ if __name__ == "__main__":
     ╚═══════════════════════════════════════════════════════╝
     """)
     
-    #print(f"Model probs:Down:{probabilities[0]:.2%} | Neutral:{probabilities[1]:.2%} | Up:{probabilities[2]:.2%}")
+    
     try:
         system = MultiPairTradingSystem()
         system.run()
