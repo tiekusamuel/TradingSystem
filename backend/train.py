@@ -18,8 +18,12 @@ import utils
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from logger import setup_logger
-from features.features import TechnicalFeatures
+
 from models.trend_model.trend_model import LSTMPredictor  
+
+#from models.momentum_model.momentum import XGBoostMomentumDetector
+from models.momentum_model.main import XGBoostMomentumDetector
+from models.regime_model.main import XGBoostRegimeDetector
 
 
 
@@ -43,37 +47,48 @@ class MultiPairTradingSystem:
         
     
         
-        self.technical_indicators = TechnicalFeatures()
-        self.trend_model = LSTMPredictor()  
         
-        self.path= f'historicalData/EURUSD_15M_2007_2024.csv'
+        self.trend_model = LSTMPredictor()  
+        self.momentum_model= XGBoostMomentumDetector()
+        self.regime_model = XGBoostRegimeDetector()
+        
+        self.path= f'historicalData/EURUSD_15M_2010_2024.csv'
+        
+        
+        self.M15 = pd.read_csv ('historicalData/EURUSD_15M_2015_2024.csv',sep=',')
+        self.H1 = pd.read_csv ('historicalData/EURUSD_1H_2015_2024.csv',sep=',')
        
         
         
         
     def initialize(self):
        
+        
+        #df = utils.prepare_data1(self.M15,self.H1)
+        
+        df_1 = self.M15.copy()
+        df_1.columns = df_1.columns.str.strip()
+        
+        df_1['Time'] = pd.to_datetime(df_1['Time'])
+        df_1 = df_1.set_index('Time')
+        
+        df_1 = df_1.sort_index()
+        
        
-        self._train_model_for_pair(self.path)
+        
+        self._train_model_for_pair(df_1)
         
         
    
-    def _train_model_for_pair(self, csv_file_path=None):
+    def _train_model_for_pair(self, df):
         """Train ML model for specific pair"""
         self.logger.info(f"  📊 Training model for {self.symbol}...")
         
         try:
            
             
-            # Load data from CSV
-            if not os.path.exists(csv_file_path):
-             raise FileNotFoundError(f"CSV file not found: {csv_file_path}")
-        
-            df = pd.read_csv(csv_file_path, sep=',')
-            if df.empty:
-                raise ValueError(f"No historical data retrieved for {self.symbol}")
-            
-            
+           
+           
 
             # 2. Combine Date and Time into one column
             #df['time_combined'] = pd.to_datetime(df['date'] + ' ' + df['time'])
@@ -86,22 +101,18 @@ class MultiPairTradingSystem:
             #df.drop(['date', 'time'], axis=1, inplace=True)
 
             # 4. Now perform your renames
-            df.rename(columns={
-                
-                'open': 'Open',
-                'high': 'High',
-                'low': 'Low',
-                'close': 'Close',
-            }, inplace=True)
+           
             
-            df['datetime'] = pd.to_datetime(df['datetime'])
-            df.set_index('datetime', inplace=True)
             
-            df=self.trend_model.add_circular_time_features(df)
+            
+            
+            
+           # df=self.momentum_model.add_circular_time_features(df)
             
             # Add technical features
             self.logger.info(f"  🔧 Adding technical indicators...")
-            df = self.technical_indicators.create_trend_features(df)
+           # df = self.technical_indicators.create_trend_features(df)
+           
             if df is None or df.empty:
                 raise ValueError(f"Feature engineering failed for {self.symbol}")
         
@@ -110,42 +121,38 @@ class MultiPairTradingSystem:
             # Prepare ML features
             self.logger.info(f"  🧮 Preparing ML features...")
             
-            ml_features = self.technical_indicators.create_trend_ml_features(df)
+            #ml_features = self.technical_indicators.create_momentum_ml_features(df)
             
-            if ml_features is None or ml_features.empty:
-                raise ValueError(f"ML feature creation failed for {self.symbol}")
+            
         
-            self.logger.info(f"  🧮 ML features created: {len(ml_features.columns)} features")
+           
             
-            # Combine features
-            df_train = df.copy()
-            for col in ml_features.columns:
-                if col not in df_train.columns:
-                    df_train[col] = ml_features[col]
+           
+            
             
             # Train model
+            #df_train = df_train[[ col for col in kepp_columns if col in df_train.columns]]
+            
+            #print(df_train)
+            print(df.columns.tolist())
             start_time = pd.Timestamp.now()
             self.logger.info(f"  🧠 Training LSTM model (this may take a few minutes)...")
-            history= self.trend_model.train(df_train, epochs=30, batch_size=32, validation_split=0.2)
+            #history= self.momentum_model.train(df)
+            history1 = self.regime_model.train(df)
             
-            #log training results
-            if history is not None:
-                best_val_loss = min(history.history['val_loss'])
-                best_val_acc  = max(history.history['val_accuracy'])
-                total_epochs  = len(history.history['val_loss'])
-                
-                self.logger.info(f"  📉 Best Val Loss:     {best_val_loss:.6f}")
-                self.logger.info(f"  🎯 Best Val Accuracy: {best_val_acc*100:.2f}%")
-                self.logger.info(f"  🔄 Epochs Completed:  {total_epochs}/50")
             
             # Save model
-            model_path = None
-            scaler_path = None
-            self.trend_model.save(model_path, scaler_path)
+            model_path = f"models/regime_model/trained/{self.symbol}_model.json"
+            meta_path = f"models/regime_model/trained/{self.symbol}_metadata.pkl"
             
-            path= f'models/trend_model/charts/EURUSD_M15_2007_2024.png'
             
-            utils.plot_training_history(history, save_path=path)
+            self.regime_model.save(model_path, meta_path)
+            #self.momentum_model.load()
+            #self.momentum_model.predict(df)
+            
+            #path= f'models/momentum_model/charts/EURUSD_M15_2015_2024.png'
+            
+           # utils.plot_training_history(history, save_path=path)
             
             elapsed_time = (pd.Timestamp.now() - start_time).seconds
             minutes      = elapsed_time // 60
@@ -154,7 +161,7 @@ class MultiPairTradingSystem:
             self.logger.info(f"  ✅ Training Complete for {self.symbol}!")
             self.logger.info(f"  ⏱️  Time Taken:    {minutes}m {seconds}s")
             self.logger.info(f"  💾 Model Path:    {model_path}")
-            self.logger.info(f"  💾 Scaler Path:   {scaler_path}")
+            self.logger.info(f"  💾 Scaler Path:   {meta_path}")
             self.logger.info(f"{'='*60}")
             
             self.logger.info(f"  ✅ Model trained and saved for {self.symbol}")

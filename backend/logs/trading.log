@@ -1,115 +1,313 @@
-[2026-05-07 06:06:08] INFO [TradingSystem._train_model_for_pair:63]   📊 Training model for EURUSDm...
-[2026-05-07 06:06:08] ERROR [TradingSystem._train_model_for_pair:159]   ❌ Failed to train model for EURUSDm: 'date'
+[2026-05-13 15:43:45] INFO [TradingSystem._train_model_for_pair:81]   📊 Training model for EURUSDm...
+[2026-05-13 15:43:45] INFO [TradingSystem._train_model_for_pair:109]   🔧 Adding technical indicators...
+[2026-05-13 15:43:45] INFO [TradingSystem._train_model_for_pair:115]   🔧 Features added: 5 columns
+[2026-05-13 15:43:45] INFO [TradingSystem._train_model_for_pair:118]   🧮 Preparing ML features...
+[2026-05-13 15:43:45] INFO [TradingSystem._train_model_for_pair:154]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 15:43:45] ERROR [TradingSystem._train_model_for_pair:183]   ❌ Failed to train model for EURUSDm: XGBoostMomentumDetector.load() missing 2 required positional arguments: 'model_path' and 'metadata_path'
 Traceback (most recent call last):
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
-    return self._engine.get_loc(casted_key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'date'
-
-The above exception was the direct cause of the following exception:
-
+  File "D:\2. Group E-H\TradingSystem\backend\train.py", line 163, in _train_model_for_pair
+    self.momentum_model.load()
+TypeError: XGBoostMomentumDetector.load() missing 2 required positional arguments: 'model_path' and 'metadata_path'
+[2026-05-13 15:45:13] INFO [TradingSystem._train_model_for_pair:81]   📊 Training model for EURUSDm...
+[2026-05-13 15:45:13] INFO [TradingSystem._train_model_for_pair:109]   🔧 Adding technical indicators...
+[2026-05-13 15:45:13] INFO [TradingSystem._train_model_for_pair:115]   🔧 Features added: 5 columns
+[2026-05-13 15:45:13] INFO [TradingSystem._train_model_for_pair:118]   🧮 Preparing ML features...
+[2026-05-13 15:45:13] INFO [TradingSystem._train_model_for_pair:154]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 15:47:32] INFO [TradingSystem._train_model_for_pair:174]   ✅ Training Complete for EURUSDm!
+[2026-05-13 15:47:32] INFO [TradingSystem._train_model_for_pair:175]   ⏱️  Time Taken:    2m 18s
+[2026-05-13 15:47:32] INFO [TradingSystem._train_model_for_pair:176]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 15:47:32] INFO [TradingSystem._train_model_for_pair:177]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 15:47:32] INFO [TradingSystem._train_model_for_pair:178] ============================================================
+[2026-05-13 15:47:32] INFO [TradingSystem._train_model_for_pair:180]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 15:50:06] INFO [TradingSystem._train_model_for_pair:81]   📊 Training model for EURUSDm...
+[2026-05-13 15:50:06] INFO [TradingSystem._train_model_for_pair:109]   🔧 Adding technical indicators...
+[2026-05-13 15:50:06] INFO [TradingSystem._train_model_for_pair:115]   🔧 Features added: 5 columns
+[2026-05-13 15:50:06] INFO [TradingSystem._train_model_for_pair:118]   🧮 Preparing ML features...
+[2026-05-13 15:50:06] INFO [TradingSystem._train_model_for_pair:154]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 15:52:18] INFO [TradingSystem._train_model_for_pair:174]   ✅ Training Complete for EURUSDm!
+[2026-05-13 15:52:18] INFO [TradingSystem._train_model_for_pair:175]   ⏱️  Time Taken:    2m 12s
+[2026-05-13 15:52:18] INFO [TradingSystem._train_model_for_pair:176]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 15:52:18] INFO [TradingSystem._train_model_for_pair:177]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 15:52:18] INFO [TradingSystem._train_model_for_pair:178] ============================================================
+[2026-05-13 15:52:18] INFO [TradingSystem._train_model_for_pair:180]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 15:54:54] INFO [TradingSystem._train_model_for_pair:81]   📊 Training model for EURUSDm...
+[2026-05-13 15:54:54] INFO [TradingSystem._train_model_for_pair:109]   🔧 Adding technical indicators...
+[2026-05-13 15:54:54] INFO [TradingSystem._train_model_for_pair:115]   🔧 Features added: 5 columns
+[2026-05-13 15:54:54] INFO [TradingSystem._train_model_for_pair:118]   🧮 Preparing ML features...
+[2026-05-13 15:54:54] INFO [TradingSystem._train_model_for_pair:154]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 15:57:34] INFO [TradingSystem._train_model_for_pair:174]   ✅ Training Complete for EURUSDm!
+[2026-05-13 15:57:34] INFO [TradingSystem._train_model_for_pair:175]   ⏱️  Time Taken:    2m 39s
+[2026-05-13 15:57:34] INFO [TradingSystem._train_model_for_pair:176]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 15:57:34] INFO [TradingSystem._train_model_for_pair:177]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 15:57:34] INFO [TradingSystem._train_model_for_pair:178] ============================================================
+[2026-05-13 15:57:34] INFO [TradingSystem._train_model_for_pair:180]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 15:59:08] INFO [TradingSystem._train_model_for_pair:81]   📊 Training model for EURUSDm...
+[2026-05-13 15:59:08] INFO [TradingSystem._train_model_for_pair:109]   🔧 Adding technical indicators...
+[2026-05-13 15:59:08] INFO [TradingSystem._train_model_for_pair:115]   🔧 Features added: 5 columns
+[2026-05-13 15:59:08] INFO [TradingSystem._train_model_for_pair:118]   🧮 Preparing ML features...
+[2026-05-13 15:59:08] INFO [TradingSystem._train_model_for_pair:154]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 16:01:23] INFO [TradingSystem._train_model_for_pair:174]   ✅ Training Complete for EURUSDm!
+[2026-05-13 16:01:23] INFO [TradingSystem._train_model_for_pair:175]   ⏱️  Time Taken:    2m 14s
+[2026-05-13 16:01:23] INFO [TradingSystem._train_model_for_pair:176]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 16:01:23] INFO [TradingSystem._train_model_for_pair:177]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 16:01:23] INFO [TradingSystem._train_model_for_pair:178] ============================================================
+[2026-05-13 16:01:23] INFO [TradingSystem._train_model_for_pair:180]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 16:02:33] INFO [TradingSystem._train_model_for_pair:81]   📊 Training model for EURUSDm...
+[2026-05-13 16:02:33] INFO [TradingSystem._train_model_for_pair:109]   🔧 Adding technical indicators...
+[2026-05-13 16:02:33] INFO [TradingSystem._train_model_for_pair:115]   🔧 Features added: 5 columns
+[2026-05-13 16:02:33] INFO [TradingSystem._train_model_for_pair:118]   🧮 Preparing ML features...
+[2026-05-13 16:02:33] INFO [TradingSystem._train_model_for_pair:154]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 16:04:54] INFO [TradingSystem._train_model_for_pair:174]   ✅ Training Complete for EURUSDm!
+[2026-05-13 16:04:54] INFO [TradingSystem._train_model_for_pair:175]   ⏱️  Time Taken:    2m 21s
+[2026-05-13 16:04:54] INFO [TradingSystem._train_model_for_pair:176]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 16:04:54] INFO [TradingSystem._train_model_for_pair:177]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 16:04:54] INFO [TradingSystem._train_model_for_pair:178] ============================================================
+[2026-05-13 16:04:54] INFO [TradingSystem._train_model_for_pair:180]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 16:06:08] INFO [TradingSystem._train_model_for_pair:81]   📊 Training model for EURUSDm...
+[2026-05-13 16:06:08] INFO [TradingSystem._train_model_for_pair:109]   🔧 Adding technical indicators...
+[2026-05-13 16:06:08] INFO [TradingSystem._train_model_for_pair:115]   🔧 Features added: 5 columns
+[2026-05-13 16:06:08] INFO [TradingSystem._train_model_for_pair:118]   🧮 Preparing ML features...
+[2026-05-13 16:06:08] INFO [TradingSystem._train_model_for_pair:154]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 16:08:18] INFO [TradingSystem._train_model_for_pair:174]   ✅ Training Complete for EURUSDm!
+[2026-05-13 16:08:18] INFO [TradingSystem._train_model_for_pair:175]   ⏱️  Time Taken:    2m 10s
+[2026-05-13 16:08:18] INFO [TradingSystem._train_model_for_pair:176]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 16:08:18] INFO [TradingSystem._train_model_for_pair:177]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 16:08:18] INFO [TradingSystem._train_model_for_pair:178] ============================================================
+[2026-05-13 16:08:18] INFO [TradingSystem._train_model_for_pair:180]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 16:11:46] INFO [TradingSystem._train_model_for_pair:81]   📊 Training model for EURUSDm...
+[2026-05-13 16:11:46] INFO [TradingSystem._train_model_for_pair:109]   🔧 Adding technical indicators...
+[2026-05-13 16:11:46] INFO [TradingSystem._train_model_for_pair:115]   🔧 Features added: 5 columns
+[2026-05-13 16:11:46] INFO [TradingSystem._train_model_for_pair:118]   🧮 Preparing ML features...
+[2026-05-13 16:11:46] INFO [TradingSystem._train_model_for_pair:154]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 16:14:22] INFO [TradingSystem._train_model_for_pair:174]   ✅ Training Complete for EURUSDm!
+[2026-05-13 16:14:22] INFO [TradingSystem._train_model_for_pair:175]   ⏱️  Time Taken:    2m 35s
+[2026-05-13 16:14:22] INFO [TradingSystem._train_model_for_pair:176]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 16:14:22] INFO [TradingSystem._train_model_for_pair:177]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 16:14:22] INFO [TradingSystem._train_model_for_pair:178] ============================================================
+[2026-05-13 16:14:22] INFO [TradingSystem._train_model_for_pair:180]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 16:15:27] INFO [TradingSystem._train_model_for_pair:81]   📊 Training model for EURUSDm...
+[2026-05-13 16:15:27] INFO [TradingSystem._train_model_for_pair:109]   🔧 Adding technical indicators...
+[2026-05-13 16:15:27] INFO [TradingSystem._train_model_for_pair:115]   🔧 Features added: 5 columns
+[2026-05-13 16:15:27] INFO [TradingSystem._train_model_for_pair:118]   🧮 Preparing ML features...
+[2026-05-13 16:15:27] INFO [TradingSystem._train_model_for_pair:154]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 16:18:06] INFO [TradingSystem._train_model_for_pair:174]   ✅ Training Complete for EURUSDm!
+[2026-05-13 16:18:06] INFO [TradingSystem._train_model_for_pair:175]   ⏱️  Time Taken:    2m 38s
+[2026-05-13 16:18:06] INFO [TradingSystem._train_model_for_pair:176]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 16:18:06] INFO [TradingSystem._train_model_for_pair:177]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 16:18:06] INFO [TradingSystem._train_model_for_pair:178] ============================================================
+[2026-05-13 16:18:06] INFO [TradingSystem._train_model_for_pair:180]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 18:40:59] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-13 18:40:59] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-13 18:40:59] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-13 18:40:59] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-13 18:40:59] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 18:43:34] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-13 18:43:34] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    2m 34s
+[2026-05-13 18:43:34] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 18:43:34] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 18:43:34] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-13 18:43:34] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 20:03:36] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-13 20:03:36] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-13 20:03:36] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-13 20:03:36] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-13 20:03:36] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 20:03:36] ERROR [TradingSystem._train_model_for_pair:186]   ❌ Failed to train model for EURUSDm: VolatilityVolumeFeatureEngine.compute_features() got an unexpected keyword argument 'drop_composite_scores'
 Traceback (most recent call last):
-  File "D:\2. Group E-H\TradingSystem\backend\train.py", line 79, in _train_model_for_pair
-    df['time_combined'] = pd.to_datetime(df['date'] + ' ' + df['time'])
-                                         ~~^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\pandas\core\frame.py", line 4378, in __getitem__
-    indexer = self.columns.get_loc(key)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
-    raise KeyError(key) from err
-KeyError: 'date'
-[2026-05-07 06:10:11] INFO [TradingSystem._train_model_for_pair:63]   📊 Training model for EURUSDm...
-[2026-05-07 06:10:11] ERROR [TradingSystem._train_model_for_pair:160]   ❌ Failed to train model for EURUSDm: 'RangeIndex' object has no attribute 'hour'
+  File "D:\2. Group E-H\TradingSystem\backend\train.py", line 158, in _train_model_for_pair
+    history1 = self.regime_model.train(df)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2. Group E-H\TradingSystem\backend\models\regime_model\main.py", line 965, in train
+    df_feat = self.feature_engine.compute_features(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: VolatilityVolumeFeatureEngine.compute_features() got an unexpected keyword argument 'drop_composite_scores'
+[2026-05-13 20:06:57] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-13 20:06:57] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-13 20:06:57] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-13 20:06:57] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-13 20:06:57] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 20:12:18] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-13 20:12:18] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    5m 20s
+[2026-05-13 20:12:18] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 20:12:18] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 20:12:18] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-13 20:12:18] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 20:18:12] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-13 20:18:12] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-13 20:18:12] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-13 20:18:12] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-13 20:18:12] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 20:23:35] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-13 20:23:35] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    5m 23s
+[2026-05-13 20:23:35] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 20:23:35] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 20:23:35] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-13 20:23:35] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 20:28:36] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-13 20:28:36] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-13 20:28:36] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-13 20:28:36] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-13 20:28:36] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 20:30:34] ERROR [TradingSystem._train_model_for_pair:186]   ❌ Failed to train model for EURUSDm: slice indices must be integers or None or have an __index__ method
 Traceback (most recent call last):
-  File "D:\2. Group E-H\TradingSystem\backend\train.py", line 97, in _train_model_for_pair
-    df=self.trend_model.add_circular_time_features(df)
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\backend\models\trend_model\trend_model.py", line 369, in add_circular_time_features
-    minutes_in_day = df.index.hour * 60 + df.index.minute
-                     ^^^^^^^^^^^^^
-AttributeError: 'RangeIndex' object has no attribute 'hour'
-[2026-05-07 06:21:40] INFO [TradingSystem._train_model_for_pair:63]   📊 Training model for EURUSDm...
-[2026-05-07 06:21:41] ERROR [TradingSystem._train_model_for_pair:163]   ❌ Failed to train model for EURUSDm: 'timestamp'
+  File "D:\2. Group E-H\TradingSystem\backend\train.py", line 158, in _train_model_for_pair
+    history1 = self.regime_model.train(df)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2. Group E-H\TradingSystem\backend\models\regime_model\main.py", line 972, in train
+    labels = self.create_expansion_regime_labels(df, **label_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2. Group E-H\TradingSystem\backend\models\regime_model\main.py", line 503, in create_expansion_regime_labels
+    continuation_prices = future_low[:continuation_bars]
+                          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: slice indices must be integers or None or have an __index__ method
+[2026-05-13 20:33:16] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-13 20:33:16] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-13 20:33:16] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-13 20:33:16] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-13 20:33:16] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 20:39:24] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-13 20:39:24] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    6m 8s
+[2026-05-13 20:39:24] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 20:39:24] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 20:39:24] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-13 20:39:24] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 20:43:28] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-13 20:43:28] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-13 20:43:28] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-13 20:43:28] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-13 20:43:28] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 20:50:35] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-13 20:50:35] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    7m 7s
+[2026-05-13 20:50:35] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 20:50:35] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 20:50:35] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-13 20:50:35] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 20:58:22] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-13 20:58:22] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-13 20:58:22] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-13 20:58:22] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-13 20:58:22] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 21:03:52] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-13 21:03:52] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    5m 30s
+[2026-05-13 21:03:52] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 21:03:52] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 21:03:52] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-13 21:03:52] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-13 21:08:35] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-13 21:08:35] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-13 21:08:35] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-13 21:08:35] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-13 21:08:35] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-13 21:14:12] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-13 21:14:12] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    5m 36s
+[2026-05-13 21:14:12] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-13 21:14:12] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-13 21:14:12] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-13 21:14:12] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-14 03:48:14] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-14 03:48:14] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-14 03:48:14] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-14 03:48:14] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-14 03:48:14] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-14 03:56:52] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-14 03:56:52] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-14 03:56:52] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-14 03:56:52] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-14 03:56:52] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-14 04:09:22] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-14 04:09:22] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    12m 29s
+[2026-05-14 04:09:22] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-14 04:09:22] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-14 04:09:22] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-14 04:09:22] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-14 08:07:13] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-14 08:07:13] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-14 08:07:13] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-14 08:07:13] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-14 08:07:13] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-14 08:07:13] ERROR [TradingSystem._train_model_for_pair:186]   ❌ Failed to train model for EURUSDm: VolatilityVolumeFeatureEngine.compute_features() got an unexpected keyword argument 'drop_composite_scores'
 Traceback (most recent call last):
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
-    return self._engine.get_loc(casted_key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'timestamp'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "D:\2. Group E-H\TradingSystem\backend\train.py", line 97, in _train_model_for_pair
-    df['time_combined'] = pd.to_datetime(df['time_combine'])
-                                         ^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\pandas\core\frame.py", line 4378, in __getitem__
-    indexer = self.columns.get_loc(key)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
-    raise KeyError(key) from err
-KeyError: 'timestamp'
-[2026-05-07 06:21:58] INFO [TradingSystem._train_model_for_pair:63]   📊 Training model for EURUSDm...
-[2026-05-07 06:21:59] INFO [TradingSystem._train_model_for_pair:103]   🔧 Adding technical indicators...
-[2026-05-07 06:21:59] INFO [TradingSystem._train_model_for_pair:108]   🔧 Features added: 22 columns
-[2026-05-07 06:21:59] INFO [TradingSystem._train_model_for_pair:111]   🧮 Preparing ML features...
-[2026-05-07 06:21:59] INFO [TradingSystem._train_model_for_pair:118]   🧮 ML features created: 13 features
-[2026-05-07 06:21:59] INFO [TradingSystem._train_model_for_pair:128]   🧠 Training LSTM model (this may take a few minutes)...
-[2026-05-07 06:22:00] ERROR [TradingSystem._train_model_for_pair:163]   ❌ Failed to train model for EURUSDm: could not convert string to float: '2007.05.01 12:30:00'
-Traceback (most recent call last):
-  File "D:\2. Group E-H\TradingSystem\backend\train.py", line 129, in _train_model_for_pair
-    history= self.trend_model.train(df_train, epochs=30, batch_size=32, validation_split=0.2)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\backend\models\trend_model\trend_model.py", line 483, in train
-    X_train, y_train = self.prepare_sequences(train_data, train_target, fit_scaler=True)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\backend\models\trend_model\trend_model.py", line 275, in prepare_sequences
-    scaled_data = self.scaler.fit_transform(data)
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\sklearn\utils\_set_output.py", line 316, in wrapped
-    data_to_wrap = f(self, X, *args, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\sklearn\base.py", line 907, in fit_transform
-    return self.fit(X, **fit_params).transform(X)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 924, in fit
-    return self.partial_fit(X, y, sample_weight)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\sklearn\base.py", line 1336, in wrapper
-    return fit_method(estimator, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 961, in partial_fit
-    X = validate_data(
-        ^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\sklearn\utils\validation.py", line 2902, in validate_data
-    out = check_array(X, input_name="X", **check_params)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1022, in check_array
-    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\sklearn\utils\_array_api.py", line 878, in _asarray_with_order
-    array = numpy.asarray(array, order=order, dtype=dtype)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\2. Group E-H\TradingSystem\.venv\Lib\site-packages\pandas\core\generic.py", line 2039, in __array__
-    arr = np.asarray(values, dtype=dtype)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: could not convert string to float: '2007.05.01 12:30:00'
-[2026-05-07 06:29:44] INFO [TradingSystem._train_model_for_pair:63]   📊 Training model for EURUSDm...
-[2026-05-07 06:29:44] INFO [TradingSystem._train_model_for_pair:103]   🔧 Adding technical indicators...
-[2026-05-07 06:29:45] INFO [TradingSystem._train_model_for_pair:108]   🔧 Features added: 21 columns
-[2026-05-07 06:29:45] INFO [TradingSystem._train_model_for_pair:111]   🧮 Preparing ML features...
-[2026-05-07 06:29:45] INFO [TradingSystem._train_model_for_pair:118]   🧮 ML features created: 13 features
-[2026-05-07 06:29:45] INFO [TradingSystem._train_model_for_pair:128]   🧠 Training LSTM model (this may take a few minutes)...
-[2026-05-07 07:26:41] INFO [TradingSystem._train_model_for_pair:63]   📊 Training model for EURUSDm...
-[2026-05-07 07:26:42] INFO [TradingSystem._train_model_for_pair:103]   🔧 Adding technical indicators...
-[2026-05-07 07:26:42] INFO [TradingSystem._train_model_for_pair:108]   🔧 Features added: 21 columns
-[2026-05-07 07:26:42] INFO [TradingSystem._train_model_for_pair:111]   🧮 Preparing ML features...
-[2026-05-07 07:26:42] INFO [TradingSystem._train_model_for_pair:118]   🧮 ML features created: 13 features
-[2026-05-07 07:26:42] INFO [TradingSystem._train_model_for_pair:128]   🧠 Training LSTM model (this may take a few minutes)...
+  File "D:\2. Group E-H\TradingSystem\backend\train.py", line 158, in _train_model_for_pair
+    history1 = self.regime_model.train(df)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2. Group E-H\TradingSystem\backend\models\regime_model\main.py", line 1240, in train
+    df_feat = self.feature_engine.compute_features(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: VolatilityVolumeFeatureEngine.compute_features() got an unexpected keyword argument 'drop_composite_scores'
+[2026-05-14 08:17:24] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-14 08:17:24] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-14 08:17:24] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-14 08:17:24] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-14 08:17:24] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-14 08:23:17] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-14 08:23:17] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    5m 53s
+[2026-05-14 08:23:17] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-14 08:23:17] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-14 08:23:17] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-14 08:23:17] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-14 08:26:49] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-14 08:26:49] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-14 08:26:49] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-14 08:26:49] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-14 08:26:49] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-14 08:32:18] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-14 08:32:18] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    5m 29s
+[2026-05-14 08:32:18] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-14 08:32:18] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-14 08:32:18] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-14 08:32:18] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-14 08:36:29] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-14 08:36:29] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-14 08:36:29] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-14 08:36:29] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-14 08:36:29] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-14 08:41:59] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-14 08:41:59] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    5m 29s
+[2026-05-14 08:41:59] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-14 08:41:59] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-14 08:41:59] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-14 08:41:59] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-14 08:49:05] INFO [TradingSystem._train_model_for_pair:83]   📊 Training model for EURUSDm...
+[2026-05-14 08:49:05] INFO [TradingSystem._train_model_for_pair:111]   🔧 Adding technical indicators...
+[2026-05-14 08:49:05] INFO [TradingSystem._train_model_for_pair:117]   🔧 Features added: 5 columns
+[2026-05-14 08:49:05] INFO [TradingSystem._train_model_for_pair:120]   🧮 Preparing ML features...
+[2026-05-14 08:49:05] INFO [TradingSystem._train_model_for_pair:156]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-14 08:53:28] INFO [TradingSystem._train_model_for_pair:177]   ✅ Training Complete for EURUSDm!
+[2026-05-14 08:53:28] INFO [TradingSystem._train_model_for_pair:178]   ⏱️  Time Taken:    4m 22s
+[2026-05-14 08:53:28] INFO [TradingSystem._train_model_for_pair:179]   💾 Model Path:    models/momentum_model/EURUSDm_model.json
+[2026-05-14 08:53:28] INFO [TradingSystem._train_model_for_pair:180]   💾 Scaler Path:   models/momentum_model/EURUSDm_metadata.pkl
+[2026-05-14 08:53:28] INFO [TradingSystem._train_model_for_pair:181] ============================================================
+[2026-05-14 08:53:28] INFO [TradingSystem._train_model_for_pair:183]   ✅ Model trained and saved for EURUSDm
+[2026-05-14 10:07:40] INFO [TradingSystem._train_model_for_pair:85]   📊 Training model for EURUSDm...
+[2026-05-14 10:07:40] INFO [TradingSystem._train_model_for_pair:113]   🔧 Adding technical indicators...
+[2026-05-14 10:07:40] INFO [TradingSystem._train_model_for_pair:119]   🔧 Features added: 5 columns
+[2026-05-14 10:07:40] INFO [TradingSystem._train_model_for_pair:122]   🧮 Preparing ML features...
+[2026-05-14 10:07:40] INFO [TradingSystem._train_model_for_pair:139]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-14 10:11:40] INFO [TradingSystem._train_model_for_pair:161]   ✅ Training Complete for EURUSDm!
+[2026-05-14 10:11:40] INFO [TradingSystem._train_model_for_pair:162]   ⏱️  Time Taken:    3m 59s
+[2026-05-14 10:11:40] INFO [TradingSystem._train_model_for_pair:163]   💾 Model Path:    models/regime_model/trained/EURUSDm_model.json
+[2026-05-14 10:11:40] INFO [TradingSystem._train_model_for_pair:164]   💾 Scaler Path:   models/regime_model/trained/EURUSDm_metadata.pkl
+[2026-05-14 10:11:40] INFO [TradingSystem._train_model_for_pair:165] ============================================================
+[2026-05-14 10:11:40] INFO [TradingSystem._train_model_for_pair:167]   ✅ Model trained and saved for EURUSDm
+[2026-05-14 10:30:22] INFO [TradingSystem._train_model_for_pair:85]   📊 Training model for EURUSDm...
+[2026-05-14 10:30:22] INFO [TradingSystem._train_model_for_pair:113]   🔧 Adding technical indicators...
+[2026-05-14 10:30:22] INFO [TradingSystem._train_model_for_pair:119]   🔧 Features added: 5 columns
+[2026-05-14 10:30:22] INFO [TradingSystem._train_model_for_pair:122]   🧮 Preparing ML features...
+[2026-05-14 10:30:22] INFO [TradingSystem._train_model_for_pair:139]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-14 10:34:32] INFO [TradingSystem._train_model_for_pair:161]   ✅ Training Complete for EURUSDm!
+[2026-05-14 10:34:32] INFO [TradingSystem._train_model_for_pair:162]   ⏱️  Time Taken:    4m 9s
+[2026-05-14 10:34:32] INFO [TradingSystem._train_model_for_pair:163]   💾 Model Path:    models/regime_model/trained/EURUSDm_model.json
+[2026-05-14 10:34:32] INFO [TradingSystem._train_model_for_pair:164]   💾 Scaler Path:   models/regime_model/trained/EURUSDm_metadata.pkl
+[2026-05-14 10:34:32] INFO [TradingSystem._train_model_for_pair:165] ============================================================
+[2026-05-14 10:34:32] INFO [TradingSystem._train_model_for_pair:167]   ✅ Model trained and saved for EURUSDm
+[2026-05-14 10:35:41] INFO [TradingSystem._train_model_for_pair:85]   📊 Training model for EURUSDm...
+[2026-05-14 10:35:41] INFO [TradingSystem._train_model_for_pair:113]   🔧 Adding technical indicators...
+[2026-05-14 10:35:41] INFO [TradingSystem._train_model_for_pair:119]   🔧 Features added: 5 columns
+[2026-05-14 10:35:41] INFO [TradingSystem._train_model_for_pair:122]   🧮 Preparing ML features...
+[2026-05-14 10:35:41] INFO [TradingSystem._train_model_for_pair:139]   🧠 Training LSTM model (this may take a few minutes)...
+[2026-05-14 10:39:48] INFO [TradingSystem._train_model_for_pair:161]   ✅ Training Complete for EURUSDm!
+[2026-05-14 10:39:48] INFO [TradingSystem._train_model_for_pair:162]   ⏱️  Time Taken:    4m 6s
+[2026-05-14 10:39:48] INFO [TradingSystem._train_model_for_pair:163]   💾 Model Path:    models/regime_model/trained/EURUSDm_model.json
+[2026-05-14 10:39:48] INFO [TradingSystem._train_model_for_pair:164]   💾 Scaler Path:   models/regime_model/trained/EURUSDm_metadata.pkl
+[2026-05-14 10:39:48] INFO [TradingSystem._train_model_for_pair:165] ============================================================
+[2026-05-14 10:39:48] INFO [TradingSystem._train_model_for_pair:167]   ✅ Model trained and saved for EURUSDm

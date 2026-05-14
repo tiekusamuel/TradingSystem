@@ -33,14 +33,13 @@ class LSTMPredictor:
     
     def __init__(
         self,
-        lookback: int = 200,
+        lookback: int = 220,
         features: int = 20,
         lstm_units: List[int] = [64, 32],
         dropout: float = 0.4,
         dense_units: int = 16,
-        learning_rate: float = 0.0001,
+        learning_rate: float = 0.0003,
         weight_decay: float = 0.0001,
-        model_dir: str = 'models'
     ):
         """
         Initialize LSTM Predictor
@@ -175,7 +174,7 @@ class LSTMPredictor:
         self,
         df: pd.DataFrame,
         threshold: float = 0.0005,
-        horizon: int = 5
+        horizon: int = 10
     ) -> pd.Series:
         """
         Create classification labels WITHOUT forward-looking bias
